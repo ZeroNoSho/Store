@@ -29,7 +29,7 @@ function App() {
 
   return (
     <Router>
-      <nav className="container navbar navbar-expand-lg">
+      <nav className="container navbar navbar-expand-lg" id="yekos">
         <div className="container-fluid">
           <Link to={"/"} className="navbar-item sadadawa">
             <p className="ari">Ari Shop</p>

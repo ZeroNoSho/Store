@@ -10,6 +10,7 @@ const Details = ({ nums1, setNums1 }) => {
   const { id } = useParams();
   const product = useSelector((state) => productSelector.selectById(state, id));
   const dispatch = useDispatch();
+  window.scrollBy(0, -500);
 
   useEffect(() => {
     dispatch(getProducts1());
