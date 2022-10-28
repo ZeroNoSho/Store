@@ -35,11 +35,11 @@ function App() {
             <p className="ari">Ari Shop</p>
           </Link>
 
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <div className="dropdown">
+            <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               <i className="fa-solid fa-cart-shopping"></i>
             </button>
-            <ul class="dropdown-menu">
+            <ul className="dropdown-menu">
               <div className="d-flex">
                 <p className="navbar-item sadaas">keranjang({nums1.length})</p>
                 <Link to={"/Carts"} className="sadaas navbar-item xca">
@@ -71,7 +71,7 @@ function App() {
 
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span className="sadsd">
-              <i class="fa-solid fa-bars"></i>
+              <i className="fa-solid fa-bars"></i>
             </span>
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
