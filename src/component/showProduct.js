@@ -47,10 +47,12 @@ const ShowProduct = () => {
         <div className="columns row">
           {product.map((e, i) => (
             <div key={i} className="column col-md-4 hover">
-              <Link to={`/Details/${e.id}`} typeof="button">
+              <Link to={`/Details/${e.id}`} >
                 <div className="card card1">
                   <div className="card-image">
-                    <img className="images" src={e.image} alt="img" />
+                    <figure className="image is-4by3">
+                      <img className="images" src={e.image} alt="img" />
+                    </figure>
                   </div>
                   <div className="card-content hover">
                     <div className="media">
