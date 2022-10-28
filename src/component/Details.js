@@ -10,13 +10,12 @@ const Details = ({ nums1, setNums1 }) => {
   const { id } = useParams();
   const product = useSelector((state) => productSelector.selectById(state, id));
   const dispatch = useDispatch();
-  
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     dispatch(getProducts1());
   }, [dispatch]);
 
@@ -43,6 +42,10 @@ const Details = ({ nums1, setNums1 }) => {
   }
 
   function createProduct() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     const keranjangs = {
       jumlah: nums,
       total_harga: product.price * nums,
@@ -53,7 +56,6 @@ const Details = ({ nums1, setNums1 }) => {
     let nama = JSON.parse(localStorage.getItem("Makanan"));
     setNums1(nama);
 
-    console.log(nums1);
     if (JSON.parse(localStorage.getItem("Makanan")).length === 0) {
       nama.push(keranjangs);
       localStorage.setItem("Makanan", JSON.stringify(nama));
