@@ -47,7 +47,7 @@ const ShowProduct = () => {
         <div className="columns row">
           {product.map((e, i) => (
             <div key={i} className="column col-md-4 hover">
-              <Link to={`/Details/${e.id}`} >
+              <Link to={`/Details/${e.id}`}>
                 <div className="card card1">
                   <div className="card-image">
                     <figure className="image is-4by3">
