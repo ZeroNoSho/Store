@@ -7,7 +7,12 @@ import Details from "./component/Details";
 import Carts from "./component/Carts";
 
 function App() {
+  let naw = 0;
   const [nums1, setNums1] = useState([]);
+
+  nums1.forEach((e) => {
+    naw += e.jumlah;
+  });
 
   useEffect(() => {
     setNums1(JSON.parse(localStorage.getItem("Makanan")));
@@ -37,6 +42,7 @@ function App() {
 
           <div className="dropdown">
             <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <div hidden={naw === 0 ? true : false}  class="styled__CartItemCount-sc-16e3jyi-9 kurad">{naw}</div>
               <i className="fa-solid fa-cart-shopping"></i>
             </button>
             <ul className="dropdown-menu">
@@ -92,6 +98,7 @@ function App() {
               </div>
               <div className="navbar-item has-dropdown is-hoverable">
                 <Link className="navbar-item item2">
+                  <div hidden={naw === 0 ? true : false} class="styled__CartItemCount-sc-16e3jyi-9 kurad">{naw}</div>
                   <i className="fa-solid fa-cart-shopping"></i>
                 </Link>
 

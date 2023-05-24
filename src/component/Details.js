@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { productSelector, getProducts1 } from "../features/productSlice";
 import { Link, useParams } from "react-router-dom";
 import Foot from "./Foot";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const Details = ({ nums1, setNums1 }) => {
   const [nums, setNums] = useState(0);
@@ -42,6 +44,7 @@ const Details = ({ nums1, setNums1 }) => {
   }
 
   function createProduct() {
+    const MySwal = withReactContent(Swal);
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -77,6 +80,23 @@ const Details = ({ nums1, setNums1 }) => {
         });
       }
     }
+
+    const Toast = MySwal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener("mouseenter", Swal.stopTimer);
+        toast.addEventListener("mouseleave", Swal.resumeTimer);
+      },
+    });
+
+    Toast.fire({
+      icon: "success",
+      title: "Success Menambahkan Ke Keranjang",
+    });
   }
 
   return (
